@@ -21,7 +21,7 @@
 #include "common.hpp"
 
 #define PLUGIN_NAME "StreamFX"
-#define PREFIX "streamfx-"
+#define PREFIX "streamfx_"
 
 #define D_TRANSLATE(x) obs_module_text(x)
 #define D_DESC(x) x ".Description"

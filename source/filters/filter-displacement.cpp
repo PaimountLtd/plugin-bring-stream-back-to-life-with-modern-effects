@@ -123,7 +123,7 @@ std::string displacement_instance::get_file()
 
 displacement_factory::displacement_factory()
 {
-	_info.id           = PREFIX "filter-displacement";
+	_info.id           = PREFIX "filter_displacement";
 	_info.type         = OBS_SOURCE_TYPE_FILTER;
 	_info.output_flags = OBS_SOURCE_VIDEO;
 
@@ -165,8 +165,9 @@ obs_properties_t* displacement_factory::get_properties2(displacement_instance* d
 	}
 
 	{
+		std::string filter = "Texture (" S_FILEFILTERS_TEXTURE ")";
 		auto p = obs_properties_add_path(pr, ST_FILE, D_TRANSLATE(ST_FILE), obs_path_type::OBS_PATH_FILE,
-										 D_TRANSLATE(S_FILEFILTERS_TEXTURE), path.c_str());
+										 filter.c_str(), path.c_str());
 		obs_property_set_long_description(p, D_TRANSLATE(D_DESC(ST_FILE)));
 	}
 	{

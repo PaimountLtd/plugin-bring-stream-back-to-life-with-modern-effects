@@ -346,7 +346,7 @@ void dynamic_mask_instance::video_render(gs_effect_t* in_effect)
 
 dynamic_mask_factory::dynamic_mask_factory()
 {
-	_info.id           = PREFIX "filter-dynamic-mask";
+	_info.id           = PREFIX "filter_dynamic_mask";
 	_info.type         = OBS_SOURCE_TYPE_FILTER;
 	_info.output_flags = OBS_SOURCE_VIDEO;
 

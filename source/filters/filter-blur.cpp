@@ -560,7 +560,7 @@ void blur_instance::video_render(gs_effect_t* effect)
 
 blur_factory::blur_factory()
 {
-	_info.id           = PREFIX "filter-blur";
+	_info.id           = PREFIX "filter_blur";
 	_info.type         = OBS_SOURCE_TYPE_FILTER;
 	_info.output_flags = OBS_SOURCE_VIDEO;
 
@@ -859,7 +859,7 @@ obs_properties_t* blur_factory::get_properties2(blur_instance* data)
 		/// Image
 		{
 			std::string filter =
-				translate_string("%s (%s);;* (*.*)", D_TRANSLATE(S_FILETYPE_IMAGES), S_FILEFILTERS_TEXTURE);
+				translate_string("%s (%s)", D_TRANSLATE(S_FILETYPE_IMAGES), S_FILEFILTERS_TEXTURE);
 			_translation_cache.push_back(filter);
 			p = obs_properties_add_path(pr, ST_MASK_IMAGE, D_TRANSLATE(ST_MASK_IMAGE), OBS_PATH_FILE,
 										_translation_cache.back().c_str(), nullptr);
