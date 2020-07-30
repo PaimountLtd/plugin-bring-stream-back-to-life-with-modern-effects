@@ -19,7 +19,6 @@
 cmake_minimum_required(VERSION 3.8.0)
 set(HAVE_OBS_FRONTEND FALSE)
 set(TARGET libobs)
-set(NEED_PACKAGED FALSE)
 
 # Automatic Versioning
 set(VERSION_MAJOR 0)
@@ -273,7 +272,7 @@ configure_file(
 	"${PROJECT_BINARY_DIR}/generated/module.cpp"
 )
 
-if(NEED_PACKAGED)
+if(NOT ${PropertyPrefix}OBS_NATIVE)
 	# Packaging
 	if("${CMAKE_PACKAGE_SUFFIX_OVERRIDE}" STREQUAL "")
 		set(_PACKAGE_SUFFIX_OVERRIDE "${VERSION_STRING}")
