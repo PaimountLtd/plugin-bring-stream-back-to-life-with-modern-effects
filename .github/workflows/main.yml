@@ -205,20 +205,6 @@ jobs:
         cmake --build "build/debug" --config RelWithDebInfo --target PACKAGE_7Z
         cmake --build "build/release" --config RelWithDebInfo --target PACKAGE_7Z
 
-    - name: "Package: Installer (Windows)"
-      if: startsWith( matrix.runner, 'windows' )
-      shell: cmd
-      run: |
-        "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /V10 ".\build\debug\installer.iss"
-        "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /V10 ".\build\release\installer.iss"
-
-    - name: "Package: Installer (MacOS)"
-      if: startsWith( matrix.runner, 'macos' )
-      shell: bash
-      run: |
-        packagesbuild ./build/debug/installer.pkgproj
-        packagesbuild ./build/release/installer.pkgproj
-
     - name: "Artifacts"
       uses: actions/upload-artifact@v1
       with:
